@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Độ hiếm vật phẩm</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+@font-face{
+        font-family:'Pixel';  /* NGƯỜI CODE : NGUYỄN ĐÌNH CƯỜNG QUỐC B24DCGA124*/
+        src:url("FVF Fernando 08.ttf") format("truetype");
+        font-weight:nomal;
+        font-size:nomal;
+      }
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="836ecdfd-563d-44f4-b3fd-c3916522cfce" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="image_2024-10-25_231751690.png"/></div><h1 class="page-title" style="font-family: 'Pixel';">Độ hiếm vật phẩm</h1><p class="page-description"></p></header><div class="page-body"><p id="c7aef747-2694-43cc-9f6d-3728aa080137" class="">Hệ thống độ hiếm (rarity) của vật phẩm trong Terraria giúp người chơi xác định độ quý hiếm và sức mạnh của từng vật phẩm. Mỗi cấp độ hiếm thường đi kèm với màu sắc riêng biệt để dễ nhận diện và biểu thị độ khó để sở hữu cũng như giá trị của vật phẩm đó. Dưới đây là các cấp độ hiếm cơ bản của vật phẩm trong Terraria:</p><hr id="b28a52cb-824d-40c3-85ce-d7717b12badf"/><h2 id="a20bd3a7-70e2-4217-9796-cb6005ae27e4" class=""><mark class="highlight-default"><mark class="highlight-gray_background"><strong>Không có độ hiếm (No Rarity) </strong></mark></mark></h2><div id="2d1931dd-1fef-448a-8af8-3a4681f16601" class="column-list"><div id="0bd5ddb4-ddf9-45a5-b8e8-64ce16bc1673" style="width:18.75%" class="column"><figure id="69257e5d-8aeb-4525-8086-23eda849d40e" class="image"><a href="image_2024-10-28_212214746.png"><img style="width:192px" src="image_2024-10-28_212214746.png"/></a></figure></div><div id="707ebb60-52de-4f5b-9ccf-12e54e9e74eb" style="width:81.25%" class="column"><ul id="90038180-67c2-4dc2-bb9e-552fe23e632a" class="bulleted-list"><li style="list-style-type:disc">Vật phẩm không có độ hiếm thường là những vật liệu cơ bản hoặc trang bị khởi đầu, dễ tìm thấy trong trò chơi.</li></ul><ul id="091ba5e6-e3ec-4e5c-a433-10679235fccb" class="bulleted-list"><li style="list-style-type:disc"><strong>Ví dụ</strong>: Wooden Sword, Seaweed </li></ul></div></div><h2 id="434361e4-720a-4b73-8bf9-6e3f0017e353" class=""><mark class="highlight-default"><mark class="highlight-gray_background">Trắng </mark></mark></h2><div id="eb5180fa-6afe-4a91-a2ac-0f124fa92dd1" class="column-list"><div id="49891e82-0f74-4c29-98b9-da51ce6e6d8f" style="width:18.75%" class="column"><figure id="416fca77-af7c-418e-b9a3-b80fb094a91a" class="image"><a href="image_2024-10-28_212747948.png"><img style="width:192px" src="image_2024-10-28_212747948.png"/></a></figure></div><div id="e401b5e0-b91d-4ba0-a827-1eab06ecdc44" style="width:81.25%" class="column"><ul id="aaa43707-fad9-4399-b042-01a5a8f0b28d" class="bulleted-list"><li style="list-style-type:disc">Vật phẩm phổ biến, dễ kiếm được từ môi trường, thường không có giá trị cao và ít có tác động lớn đến lối chơi.</li></ul></div></div><ul id="1503b771-a7f5-4051-8fa0-7411cd24f806" class="bulleted-list"><li style="list-style-type:disc"><strong>Ví dụ</strong>: Iron Bar, Torch, Lesser Healing Potion.</li></ul><h2 id="ca854905-e06b-443b-8d84-b0bd59b2650c" class=""><mark class="highlight-default"><mark class="highlight-gray_background"><strong>Xanh lam </strong></mark></mark></h2><div id="4fbe4044-5895-410f-9702-fae780e35f5d" class="column-list"><div id="866dbdb4-d227-4054-8c9c-7120f8a79a84" style="width:18.75%" class="column"><figure id="8cc24d60-b19b-4a1e-a36b-3443fc2c0c60" class="image"><a href="image_2024-10-28_213452965.png"><img style="width:108px" src="image_2024-10-28_213452965.png"/></a></figure></div><div id="7a7754b0-5b77-4c7e-b32f-045631ad98c4" style="width:81.25%" class="column"><ul id="b40b6b52-34f3-4a57-8022-05d87136c2af" class="bulleted-list"><li style="list-style-type:disc">Vật phẩm cấp độ thấp, thường mạnh hơn một chút so với các vật phẩm khởi đầu, nhưng vẫn khá phổ biến trong các khu vực đầu game.</li></ul></div></div><ul id="7a467b4c-102f-44ee-b932-1b0a76a17663" class="bulleted-list"><li style="list-style-type:disc"><strong>Ví dụ</strong>: Iron Hammer, Strange Plant, Obsidian Shield.</li></ul><h2 id="eb8d752b-d2ce-471d-a510-bbb7eab0f92e" class=""><mark class="highlight-default"><mark class="highlight-gray_background"><strong>Xanh lục </strong></mark></mark></h2><div id="10f37848-80a7-4b08-be9c-a1ee6ddd7df0" class="column-list"><div id="80b8f79c-fa69-4a37-bf6f-6ad1681ab50b" style="width:18.75%" class="column"><figure id="96eb5f02-6548-41a5-aa53-70c4968a4ac3" class="image"><a href="image_2024-10-28_213653596.png"><img style="width:120px" src="image_2024-10-28_213653596.png"/></a></figure></div><div id="7300ae63-2b3e-4f6c-8009-0cfe57a6e851" style="width:81.25%" class="column"><ul id="e2e49168-5527-4d16-a67b-9ad7fbfc1e36" class="bulleted-list"><li style="list-style-type:disc">Vật phẩm ở cấp độ trung bình, có thể là trang bị nâng cấp hoặc vật liệu chế tạo cho các công thức mạnh hơn.</li></ul></div></div><ul id="256ce794-02fb-4794-ba2b-f4c3baa12bc9" class="bulleted-list"><li style="list-style-type:disc"><strong>Ví dụ</strong>: Iron Sword, Magnet Sphere.</li></ul><h2 id="fde09ebf-fee5-4318-ae40-1fc65c978799" class=""><mark class="highlight-default"><mark class="highlight-gray_background"><strong>Cam </strong></mark></mark></h2><div id="4b00c983-c479-47a5-9950-ddd3b7ced96e" class="column-list"><div id="e82432a1-a94c-4b15-9fdf-67bd09376f1b" style="width:18.75%" class="column"><figure id="34c7648a-1736-4f36-b61b-d27527bd3ff2" class="image"><a href="image_2024-10-28_230309421.png"><img style="width:132px" src="image_2024-10-28_230309421.png"/></a></figure></div><div id="7df009ae-cbc0-4ca7-9a59-a0b27ae91021" style="width:81.25%" class="column"><ul id="44da7f81-aa86-4146-b648-e9aa470efe91" class="bulleted-list"><li style="list-style-type:disc">Vật phẩm rất hiếm thường có các đặc điểm mạnh mẽ, giúp người chơi vượt qua các thử thách khó khăn hơn hoặc boss cấp cao.</li></ul></div></div><ul id="bf88465d-261a-499f-926e-0d73c05589c6" class="bulleted-list"><li style="list-style-type:disc"><strong>Ví dụ</strong>: Titan Glove, Rainbow Rod.</li></ul><h2 id="f98b878a-bb80-4747-b76c-81e50d371cdd" class=""><mark class="highlight-default"><mark class="highlight-gray_background"><strong>Đỏ nhạt </strong></mark></mark></h2><div id="49b92a7a-3c97-4be6-ac1b-7c5f5520dd4b" class="column-list"><div id="3f57d562-b07c-4985-94c5-2e3064b90318" style="width:18.75%" class="column"><figure id="6ada6fce-74a4-4565-b860-4c9ec77f6035" class="image"><a href="image_2024-10-28_230655617.png"><img style="width:144px" src="image_2024-10-28_230655617.png"/></a></figure></div><div id="2217fdeb-f940-444a-b934-39bfc02075f1" style="width:81.25%" class="column"><ul id="d8d6ecc6-439d-4505-9f0c-c5467279a270" class="bulleted-list"><li style="list-style-type:disc">Vật phẩm hiếm hơn nữa, mạnh mẽ và có thể thu thập từ những kẻ thù mạnh hoặc các khu vực thách thức.</li></ul></div></div><ul id="0414fc44-cf80-4f6f-a9ac-ecabfb3396d2" class="bulleted-list"><li style="list-style-type:disc">Ví dụ: Duel Hook, Bacon.</li></ul><h2 id="9ede7d86-2a00-4fbd-a46c-5745e8869a46" class=""><mark class="highlight-gray_background">Hồng</mark></h2><div id="5ff973ca-d302-457e-ab47-3275bf24e3e3" class="column-list"><div id="0f41b59c-099f-448e-bfa8-5acd8777c86d" style="width:18.75%" class="column"><figure id="1e0f03f1-d030-4cb1-9648-40c7eeabb4b2" class="image"><a href="image_2024-10-28_230928863.png"><img style="width:108px" src="image_2024-10-28_230928863.png"/></a></figure></div><div id="2eacb6ea-465a-4317-87b7-b7030a27b1bc" style="width:81.25%" class="column"><ul id="5d7f9e5e-2277-400c-b145-bfc5a65cc097" class="bulleted-list"><li style="list-style-type:disc">Vật phẩm quý hiếm, thường có sức mạnh đáng kể và được tìm thấy từ boss hoặc các sự kiện đặc biệt trong trò chơi.</li></ul></div></div><ul id="fd692b28-5661-42c0-a452-5ec5838bfa15" class="bulleted-list"><li style="list-style-type:disc"><strong>Ví dụ</strong>: Flamethrower, Ancient Shadow Helmet.</li></ul><h3 id="81411bf6-ee1f-4017-be58-d1ca044f4cde" class=""><strong>Huyền Thoại (Legendary)</strong> - Màu Cam (Orange)</h3><ul id="8723f39c-7cc8-40f0-bc9a-c86f18f25f5d" class="bulleted-list"><li style="list-style-type:disc"><strong>Đặc điểm</strong>: Vật phẩm huyền thoại thường có chỉ số vượt trội, là một trong những vật phẩm tốt nhất trong trò chơi. Chúng có thể là vũ khí hoặc giáp cực mạnh.</li></ul><ul id="c1b1ca87-69e5-4617-9e19-6bcf2eec82ae" class="bulleted-list"><li style="list-style-type:disc"><strong>Ví dụ</strong>: Kiếm Terra (Terra Blade), Cung Lửa Hỏa Ngục (Hellwing Bow).</li></ul><h3 id="282fb42c-0ee9-4b01-aa49-18420715f78f" class=""><strong>Cực Kỳ Hiếm (Exceedingly Rare)</strong> - Màu Đỏ (Red)</h3><ul id="05d4d833-9f62-4ecc-8fc5-5effdd50da32" class="bulleted-list"><li style="list-style-type:disc"><strong>Đặc điểm</strong>: Vật phẩm cực kỳ hiếm thường chỉ có thể thu được sau khi đánh bại các boss hàng đầu trong trò chơi hoặc hoàn thành các nhiệm vụ khó. Chúng là những vật phẩm mạnh nhất, thường có khả năng đặc biệt và hiệu ứng ấn tượng.</li></ul><ul id="3298e73e-5f9d-46bd-b179-46ea136fed0b" class="bulleted-list"><li style="list-style-type:disc"><strong>Ví dụ</strong>: Thanh Kiếm Meowmere, Đao Star Wrath.</li></ul><h3 id="56b288d6-3da2-4bf4-9b87-840163fb8a1f" class=""><strong>Quest Item</strong> - Màu Vàng (Yellow)</h3><ul id="b12522f7-24ea-45da-85be-9c7390d9b0d3" class="bulleted-list"><li style="list-style-type:disc"><strong>Đặc điểm</strong>: Đây là các vật phẩm liên quan đến nhiệm vụ, không mang chỉ số chiến đấu cao nhưng có giá trị để hoàn thành các nhiệm vụ cụ thể hoặc giao dịch với NPC.</li></ul><ul id="393a82f0-dccd-47b1-b1d3-a3d10831dbed" class="bulleted-list"><li style="list-style-type:disc"><strong>Ví dụ</strong>: Cá nhiệm vụ (Quest Fish) thu thập cho NPC Angler.</li></ul><hr id="fa8bf268-885b-41be-8931-1e17aeb43d37"/><h3 id="bac91593-9cec-43b4-98e2-56a28a92f4ed" class="">Cách Hệ Thống Độ Hiếm Hoạt Động</h3><ul id="df9cd454-bcb0-48b4-8611-a3420d447434" class="bulleted-list"><li style="list-style-type:disc"><strong>Hiển thị màu sắc</strong>: Màu sắc của tên vật phẩm hiển thị trong giao diện người chơi giúp dễ dàng phân biệt độ hiếm. Cấp độ càng cao, màu sắc càng nổi bật và đậm.</li></ul><ul id="37f1f8a0-2d06-4723-a074-f1d3ef00be7a" class="bulleted-list"><li style="list-style-type:disc"><strong>Tỷ lệ rớt</strong>: Độ hiếm còn được thể hiện qua tỷ lệ rớt vật phẩm từ quái vật, boss hoặc sự kiện. Những vật phẩm có độ hiếm cao thường có tỷ lệ rớt rất thấp, yêu cầu người chơi phải bỏ công sức săn tìm.</li></ul><ul id="64e7fd36-0451-4fe2-8b01-92f51f3d8fef" class="bulleted-list"><li style="list-style-type:disc"><strong>Khả năng và chỉ số</strong>: Các vật phẩm hiếm thường có chỉ số sức mạnh và khả năng đặc biệt cao hơn. Một số vật phẩm hiếm còn mang các hiệu ứng phụ, chẳng hạn như hiệu ứng gây sát thương lớn hoặc tạo ra các hiệu ứng đặc biệt.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
